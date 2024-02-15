@@ -1,0 +1,12 @@
+<launch>
+    <!-- <node name="image_process" pkg="process" type="image_hand_process.py" cwd="node" output="screen"> -->
+    <!-- <remap from="/camera/image" to="/rgb/image_raw" /> -->
+    <!-- </node> -->
+
+    <node name="yolo_node" pkg="process" type="yolo.py" cwd="node" output="screen">
+        <param name="yolo_names" type="string" value="yolov4-pin.names" />
+        <param name="yolo_cfg" type="string" value="yolov4-pin.cfg" />
+        <param name="yolo_weights" type="string" value="yolov4-pin-v2.weights" />
+        <!-- <remap from="/camera/image" to="/rgb/image_raw" /> -->
+    </node>
+</launch>
